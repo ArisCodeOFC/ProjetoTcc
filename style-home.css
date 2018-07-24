@@ -2,12 +2,55 @@
     width: 100%;
     height: 50px;
     background-color: #DDD;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#navbar a{
+    margin-left: 30px;
+    text-transform: uppercase;
+    font-size: 14px;
+    text-decoration: none;
+    color: #e83131;
 }
 .tarefa_block{
-    width: 95%;
-    height: 300px;
+    display: block;
+    width: 100%;
     margin: 15px auto;
     background: #DDD;
-    border-radius: 10px;
-    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.4);
+}
+.tarefa_block h2{
+    color: #181818;
+    margin-left: 30px;
+    padding-top: 30px;
+    font-size: 26px;
+}
+.tarefa_block p{
+    margin-left: 30px;
+    padding-bottom: 30px;
+    width: 70%;
+    line-height: 21px;
+    font-size: 16px;
+}
+.tarefa_block div{
+    width: 80px;
+    height: auto;
+    margin-left: 20px;
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: flex-end;
+}
+.tarefa_block div figure{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin: 0 auto;
+    padding: 0;
+}
+.tarefa_block div figure img{
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 50%;
+    cursor: pointer;
 }
