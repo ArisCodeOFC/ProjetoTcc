@@ -1,0 +1,121 @@
+<html>
+    <head>
+        <title>Teste API</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <a href="#" onclick="registrar()">Registrar</a>
+        <a href="#" onclick="logar()">Logar</a>
+        <a href="#" onclick="cadastrarTarefa()">Cadastrar tarefa</a>
+        <a href="#" onclick="listarTarefas()">Listar tarefas</a>
+        <a href="#" onclick="atualizarTarefa()">Atualizar tarefa</a>
+        <a href="#" onclick="excluirTarefa()">Excluir tarefa</a>
+
+        <script src="js/jquery-3.2.1.min.js"></script>
+        <script>
+            let meuUsuario;
+            let nome = "Fulano de tal";
+            let email = "abc@gmail.com";
+            let senha = "1234";
+            let idTarefa = 0;
+
+            function registrar() {
+                $.ajax({
+                    type: "POST",
+                    url: "api/v1/usuario/inserir.php",
+                    data: JSON.stringify({nome: nome, email: email, senha: senha}),
+                    dataType: "json",
+                    success: function(id) {
+                        console.log("Usuário registrado", id);
+                    },
+
+                    error: function() {
+                        console.log("Erro ao registrar");
+                    }
+                });
+            }
+
+            function logar() {
+                $.ajax({
+                    type: "POST",
+                    url: "api/v1/usuario/login.php",
+                    data: JSON.stringify({email: email, senha: senha}),
+                    dataType: "json",
+                    success: function(usuario) {
+                        console.log("Usuário logado", usuario);
+                        meuUsuario = usuario;
+                    },
+
+                    error: function() {
+                        console.log("Erro ao logar");
+                    }
+                });
+            }
+
+            function cadastrarTarefa() {
+                $.ajax({
+                    type: "POST",
+                    url: "api/v1/tarefa/inserir.php",
+                    data: JSON.stringify({idUsuario: meuUsuario.id, titulo: "Titulo", "descricao": "Descrição"}),
+                    dataType: "json",
+                    success: function(resultado) {
+                        console.log("Tarefa cadastrada", resultado);
+                        idTarefa = resultado.id;
+                    },
+
+                    error: function() {
+                        console.log("Erro ao cadastrar tarefa");
+                    }
+                });
+            }
+
+            function listarTarefas() {
+                $.ajax({
+                    type: "POST",
+                    url: "api/v1/tarefa/listar.php",
+                    data: JSON.stringify({idUsuario: meuUsuario.id}),
+                    dataType: "json",
+                    success: function(tarefas) {
+                        console.log("Tarefas listadas", tarefas);
+                    },
+
+                    error: function(a,b,c) {
+                        console.log("Erro ao listar tarefas");
+                    }
+                });
+            }
+
+            function atualizarTarefa() {
+                $.ajax({
+                    type: "POST",
+                    url: "api/v1/tarefa/atualizar.php",
+                    data: JSON.stringify({id: idTarefa, titulo: "Titulo2", "descricao": "Descrição2"}),
+                    dataType: "json",
+                    success: function() {
+                        console.log("Tarefa atualizada");
+                    },
+
+                    error: function() {
+                        console.log("Erro ao atualizar tarefa");
+                    }
+                });
+            }
+
+            function excluirTarefa() {
+                $.ajax({
+                    type: "POST",
+                    url: "api/v1/tarefa/excluir.php",
+                    data: JSON.stringify({id: idTarefa}),
+                    dataType: "json",
+                    success: function() {
+                        console.log("Tarefa excluida");
+                    },
+
+                    error: function() {
+                        console.log("Erro ao excluir tarefa");
+                    }
+                });
+            }
+        </script>
+    </body>
+</html>
