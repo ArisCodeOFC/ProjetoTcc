@@ -1,4 +1,13 @@
 #navbar{
-
-
+    width: 100%;
+    height: 50px;
+    background-color: #DDD;
+}
+.tarefa_block{
+    width: 95%;
+    height: 300px;
+    margin: 15px auto;
+    background: #DDD;
+    border-radius: 10px;
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.4);
 }
