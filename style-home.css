@@ -32,6 +32,41 @@
     line-height: 21px;
     font-size: 16px;
 }
+.tarefa_block label{
+    display: block;
+    margin-left: 30px;
+    padding-top: 15px;
+    padding-bottom: 5px;
+}
+.tarefa_block input{
+    display: block;
+    margin-left: 30px;
+    width: 220px;
+    border-radius: 10px;
+    height: 30px;
+    border: none;
+}
+.tarefa_block textarea{
+    display: block;
+    resize: none;
+    margin-left: 30px;
+    height: 150px;
+    width: 220px;
+     border-radius: 10px;
+    border: none;
+}
+.btnenviar{
+    height: 40px;
+    width: 80px;
+    display: block;
+    margin-left: 30px;
+    margin-top: 15px;
+    border-radius: 10px;
+    color: #FFF;
+    outline: none;
+    border: none;
+    background-color: #E83131;
+}
 .tarefa_block div{
     width: 80px;
     height: auto;
@@ -53,4 +88,8 @@
     display: block;
     border-radius: 50%;
     cursor: pointer;
+    transition: 200ms ease-out;
+}
+.tarefa_block div figure img:hover{
+    transform: scale(1.05);
 }
