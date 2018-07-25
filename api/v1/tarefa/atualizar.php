@@ -1,43 +1,51 @@
 <?php
-    require_once("../../../database/database.php");
-    header("Content-Type: application/json");
+    /*
+        "api/v1/tarefa/atualizar.php"
+        Atualiza uma tarefa existente
 
-    $input = file_get_contents("php://input");
-    $body = json_decode($input);
-
-    $id = $body->id;
-    $titulo = $body->titulo;
-    $descricao = $body->descricao;
-
-    $result = null;
-
-    $conexao = getDatabaseConnection();
-    if ($conexao) {
-        $statement = $conexao->prepare("SELECT id FROM tbl_tarefa WHERE id = ?");
-        if ($statement) {
-            $statement->bind_param("i", $id);
-            $statement->execute();
-            $statement->bind_result($result);
-            if ($statement->fetch() && $result) {
-                $statement->close();
-                $statement2 = $conexao->prepare("UPDATE tbl_tarefa SET titulo = ?, descricao = ? WHERE id = ?");
-                if ($statement) {
-                    $statement2->bind_param("ssi", $titulo, $descricao, $id);
-                    $statement2->execute();
-                    $statement2->close();
-                }
-
-            } else {
-                $statement->close();
-            }
+        RECEBE: {
+            "titulo": "string",
+            "descricao": "string",
+            "id": 0
         }
 
-        $conexao->close();
-    }
+        PRODUZ:
+            401 - O usuário não está logado
+            404 - Erro ao atualizar no banco de dados ou id não encontrado
+            204 - Tarefa atualizada com sucesso
+    */
 
-    if (!$result) {
-        http_response_code(404);
+    error_reporting(0);
+    require_once("../../../database/database.php");
+    session_start();
+
+    if (!isset($_SESSION["usuario"])) {
+        http_response_code(401);
     } else {
-        echo(json_encode(array("sucesso" => true)));
+        $body = json_decode(file_get_contents("php://input"));
+        $id = $body->id;
+        $titulo = $body->titulo;
+        $descricao = $body->descricao;
+
+        $resultado = null;
+        $conexao = getDatabaseConnection();
+        if ($conexao) {
+            $statement = $conexao->prepare("UPDATE tbl_tarefa SET titulo = ?, descricao = ? WHERE id = ?");
+            if ($statement) {
+                $statement->bind_param("ssi", $titulo, $descricao, $id);
+                $statement->execute();
+                preg_match_all("!\d+!", $conexao->info, $matches);
+                $resultado = $matches[0][0];
+                $statement->close();
+            }
+
+            $conexao->close();
+        }
+
+        if (!$resultado) {
+            http_response_code(404);
+        } else {
+            http_response_code(204);
+        }
     }
 ?>

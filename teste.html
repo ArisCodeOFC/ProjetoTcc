@@ -4,16 +4,19 @@
         <meta charset="utf-8">
     </head>
     <body>
-        <a href="#" onclick="registrar()">Registrar</a>
-        <a href="#" onclick="logar()">Logar</a>
-        <a href="#" onclick="cadastrarTarefa()">Cadastrar tarefa</a>
-        <a href="#" onclick="listarTarefas()">Listar tarefas</a>
-        <a href="#" onclick="atualizarTarefa()">Atualizar tarefa</a>
-        <a href="#" onclick="excluirTarefa()">Excluir tarefa</a>
+        <center>Funciona apenas se não estiver logado</center><hr>
+        <a href="#" onclick="registrar()">Registrar</a><br>
+        <a href="#" onclick="logar()">Logar</a><br>
+        <center>Funciona apenas se estiver logado</center><hr>
+        <a href="#" onclick="logout()">Logout</a><br>
+        <a href="#" onclick="cadastrarTarefa()">Cadastrar tarefa</a><br>
+        <a href="#" onclick="listarTarefas()">Listar tarefas</a><br>
+        <a href="#" onclick="atualizarTarefa()">Atualizar tarefa</a><br>
+        <a href="#" onclick="excluirTarefa()">Excluir tarefa</a><br>
 
         <script src="js/jquery-3.2.1.min.js"></script>
         <script>
-            let meuUsuario;
+            let usuarioAtual;
             let nome = "Fulano de tal";
             let email = "abc@gmail.com";
             let senha = "1234";
@@ -43,7 +46,7 @@
                     dataType: "json",
                     success: function(usuario) {
                         console.log("Usuário logado", usuario);
-                        meuUsuario = usuario;
+                        usuarioAtual = usuario;
                     },
 
                     error: function() {
@@ -52,11 +55,29 @@
                 });
             }
 
+            function logout() {
+                $.ajax({
+                    type: "POST",
+                    url: "api/v1/usuario/logout.php",
+                    success: function(usuario) {
+                        console.log("Usuário deslogado");
+                    },
+
+                    error: function() {
+                        console.log("Usuário não estava logado");
+                    }
+                });
+            }
+
             function cadastrarTarefa() {
+                if (!usuarioAtual) {
+                    return;
+                }
+
                 $.ajax({
                     type: "POST",
                     url: "api/v1/tarefa/inserir.php",
-                    data: JSON.stringify({idUsuario: meuUsuario.id, titulo: "Titulo", "descricao": "Descrição"}),
+                    data: JSON.stringify({idUsuario: usuarioAtual.id, titulo: "Titulo", "descricao": "Descrição"}),
                     dataType: "json",
                     success: function(resultado) {
                         console.log("Tarefa cadastrada", resultado);
@@ -70,10 +91,14 @@
             }
 
             function listarTarefas() {
+                if (!usuarioAtual) {
+                    return;
+                }
+
                 $.ajax({
                     type: "POST",
                     url: "api/v1/tarefa/listar.php",
-                    data: JSON.stringify({idUsuario: meuUsuario.id}),
+                    data: JSON.stringify({idUsuario: usuarioAtual.id}),
                     dataType: "json",
                     success: function(tarefas) {
                         console.log("Tarefas listadas", tarefas);
