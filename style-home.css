@@ -1,6 +1,6 @@
 #navbar{
     width: 100%;
-    height: 50px;
+    height: 70px;
     background-color: #DDD;
     display: flex;
     flex-direction: column;
@@ -11,7 +11,8 @@
     text-transform: uppercase;
     font-size: 14px;
     text-decoration: none;
-    color: #e83131;
+    color: #202020;
+    font-style: bolder;
 }
 .tarefa_block{
     display: block;

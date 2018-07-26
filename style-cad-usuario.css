@@ -3,10 +3,10 @@
     margin: auto;
     background-color: #ddd;
     border-radius: 10px;
+    position: relative;
 }
 
 #titulo{
-    width: 300px;
     height: 40px;
     padding-top: 10px;
     margin: auto;
