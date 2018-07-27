@@ -1,14 +1,12 @@
 <?php
     /*
-        "api/v1/tarefa/listar.php"
-        Lista todas as tarefas de um usuário
+        POST "api/v1/tarefa/listar.php"
+        Lista todas as tarefas do usuário logado
 
-        RECEBE: {
-            "idUsuario": 0
-        }
+        RECEBE: {}
 
         PRODUZ:
-            401 - O usuário não está logado
+            500 - O usuário não está logado
             200 - Ok - [
                 {
                     "id": 0,
@@ -20,15 +18,13 @@
 
     error_reporting(0);
     require_once("../../../database/database.php");
-    header("Content-Type: application/json");
     session_start();
 
     if (!isset($_SESSION["usuario"])) {
-        http_response_code(401);
+        http_response_code(500);
+        die("Você não pode fazer isso, pois não está logado.");
     } else {
-        $body = json_decode(file_get_contents("php://input"));
-        $idUsuario = $body->idUsuario;
-
+        $idUsuario = $_SESSION["usuario"]["id"];
         $resultado = [];
 
         $conexao = getDatabaseConnection();
@@ -52,6 +48,7 @@
             $conexao->close();
         }
 
+        header("Content-Type: application/json");
         echo(json_encode($resultado));
     }
 ?>

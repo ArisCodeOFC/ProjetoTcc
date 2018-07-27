@@ -1,6 +1,6 @@
 <?php
     /*
-        "api/v1/usuario/sessao.php"
+        POST "api/v1/usuario/sessao.php"
         Checa se a pessoa que está acessando a página possui permissão de acesso
 
         RECEBE: {
@@ -8,7 +8,7 @@
         }
 
         PRODUZ:
-            401 - Não autorizado a acessar a página
+            500 - Não autorizado a acessar a página
             204 - Acesso autorizado
             200 - Acesso autorizado e usuário logado - {
                 "id": 0,
@@ -18,7 +18,6 @@
     */
 
     error_reporting(0);
-    header("Content-Type: application/json");
     session_start();
 
     $body = json_decode(file_get_contents("php://input"));
@@ -26,8 +25,10 @@
 
     if (isset($arquivo) && isset($_SESSION["usuario"])) {
         if ($arquivo == "login.html" || $arquivo == "cadastroUser.html") {
-            header("HTTP/1.1 401 index.html");
+            http_response_code(500);
+            die("index.html");
         } else {
+            header("Content-Type: application/json");
             echo(json_encode($_SESSION["usuario"]));
         }
 
@@ -35,7 +36,8 @@
         if ($arquivo == "login.html" || $arquivo == "cadastroUser.html") {
             http_response_code(204);
         } else {
-            header("HTTP/1.1 401 login.html");
+            http_response_code(500);
+            die("login.html");
         }
     }
 ?>

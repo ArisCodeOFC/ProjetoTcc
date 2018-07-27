@@ -1,11 +1,11 @@
 <?php
     /*
-        "api/v1/usuario/logout.php"
+        POST "api/v1/usuario/logout.php"
         Destrói a sessão de um usuário já logado
 
         RECEBE: {}
         PRODUZ:
-            401 - O usuário não está logado
+            500 - O usuário não está logado
             200 - Ok
     */
 
@@ -14,6 +14,7 @@
     if (isset($_SESSION["usuario"])) {
         session_destroy();
     } else {
-        http_response_code(401);
+        http_response_code(500);
+        die("Você não pode fazer isso, pois não está logado.");
     }
 ?>

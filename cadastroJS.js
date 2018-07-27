@@ -38,8 +38,8 @@ $(window).on("finishload", function(){
                     success:function(){
                         window.location.href = "login.html";
                     }, //Se der certo
-                    error:function(){
-                        $('#teste').text("Algo deu errado!");
+                    error:function(erro){
+                        $('#teste').text(erro.responseText);
                     } //Se der errado
                 });
 
