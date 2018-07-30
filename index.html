@@ -2,8 +2,8 @@
     <head>
         <meta charset="utf-8">
         <title>Teste Mudança</title>
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="style-home.css">
+        <link rel="stylesheet" href="CSS/style.css">
+        <link rel="stylesheet" href="CSS/style-home.css">
         <script src="js/jquery-3.2.1.min.js"></script>
         <script src="js/main.js"></script>
     </head>
@@ -13,16 +13,23 @@
                 <a href="">Adicionar Nova Tarefa</a>
                 <a href="">Logout</a>
             </nav>
-            <article class="tarefa_block">
-                <label for="txttitulo">Título</label>
-                <input id="txttitulo" name="txttitulo">
+            <header style="width: 100%; position: relative;">
+                <span style="position: absolute; top: 10px; left: 10px;">Adicionar Tarefa</span>
+                <button class="add_button">
+                    <img src="plus.svg">
+                </button>
+                <article class="tarefa_block content">
+                    <label for="txttitulo">Título</label>
+                    <input id="txttitulo" name="txttitulo" required>
 
-                <label for="txtdescricao">Descrição</label>
-                <textarea id="txtdescricao" name="txtdescricao"></textarea>
-                <!-- -->
-                <button type="submit" class="btnenviar">Enviar</button>
-                <br>
-            </article>
+                    <label for="txtdescricao">Descrição</label>
+                    <textarea id="txtdescricao" name="txtdescricao" required></textarea>
+                    <!-- -->
+                    <button type="submit" class="btnenviar">Enviar</button>
+                    <br>
+                </article>
+            </header>
+
             <section id="home_block">
                 <div class="tarefa_block">
                     <h2>Teste</h2>
@@ -38,5 +45,22 @@
                 </div>
             </section>
         </section>
+
     </body>
+    <script>
+    var coll = document.getElementsByClassName("add_button");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.maxHeight){
+          content.style.maxHeight = null;
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+        }
+      });
+    }
+    </script>
 </html>

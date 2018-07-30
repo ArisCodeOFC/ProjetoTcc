@@ -1,9 +1,9 @@
 // Nesta varíavel será armazenado os dados do usuário, a partir dela é possível pegar o id do usuário para adicionar uma nova tarefa para ele, ou então exibir seu nome e e-mail na tela de forma decorativa
-let usuarioAtual = undefined;
+var usuarioAtual = undefined;
 
 $(window).on("load", function() {
     // Qual arquivo .html o usuário está tentando acessar ?
-    let arquivoAtual = window.location.pathname.split("/").pop();
+    var arquivoAtual = window.location.pathname.split("/").pop();
 
     // Faz uma requisição ajax que autoriza ou não o acesso a página
     $.ajax({
@@ -22,9 +22,9 @@ $(window).on("load", function() {
         },
 
         error: function(erro) {
-            // Caso o erro retornado pelo ajax seja 401 (não autorizado), redireciona o usuário para uma página que ele pode acessar
-            if (erro.status == 401) {
-                window.location.href = erro.statusText;
+            // Caso o erro retornado pelo ajax seja 500 (erro interno), redireciona o usuário para uma página que ele pode acessar
+            if (erro.status == 500) {
+                window.location.href = erro.responseText;
             }
         }
     });

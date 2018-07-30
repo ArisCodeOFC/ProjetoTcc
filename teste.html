@@ -16,7 +16,6 @@
 
         <script src="js/jquery-3.2.1.min.js"></script>
         <script>
-            let usuarioAtual;
             let nome = "Fulano de tal";
             let email = "abc@gmail.com";
             let senha = "1234";
@@ -32,8 +31,8 @@
                         console.log("Usuário registrado", id);
                     },
 
-                    error: function() {
-                        console.log("Erro ao registrar");
+                    error: function(erro) {
+                        console.log("Erro ao registrar", erro.responseText);
                     }
                 });
             }
@@ -46,11 +45,10 @@
                     dataType: "json",
                     success: function(usuario) {
                         console.log("Usuário logado", usuario);
-                        usuarioAtual = usuario;
                     },
 
-                    error: function() {
-                        console.log("Erro ao logar");
+                    error: function(erro) {
+                        console.log("Erro ao logar", erro.responseText);
                     }
                 });
             }
@@ -59,53 +57,43 @@
                 $.ajax({
                     type: "POST",
                     url: "api/v1/usuario/logout.php",
-                    success: function(usuario) {
+                    success: function() {
                         console.log("Usuário deslogado");
                     },
 
-                    error: function() {
-                        console.log("Usuário não estava logado");
+                    error: function(erro) {
+                        console.log("Erro ao deslogar", erro.responseText);
                     }
                 });
             }
 
             function cadastrarTarefa() {
-                if (!usuarioAtual) {
-                    return;
-                }
-
                 $.ajax({
                     type: "POST",
                     url: "api/v1/tarefa/inserir.php",
-                    data: JSON.stringify({idUsuario: usuarioAtual.id, titulo: "Titulo", "descricao": "Descrição"}),
+                    data: JSON.stringify({titulo: "Titulo", "descricao": "Descrição"}),
                     dataType: "json",
                     success: function(resultado) {
                         console.log("Tarefa cadastrada", resultado);
                         idTarefa = resultado.id;
                     },
 
-                    error: function() {
-                        console.log("Erro ao cadastrar tarefa");
+                    error: function(erro) {
+                        console.log("Erro ao cadastrar tarefa", erro.responseText);
                     }
                 });
             }
 
             function listarTarefas() {
-                if (!usuarioAtual) {
-                    return;
-                }
-
                 $.ajax({
                     type: "POST",
                     url: "api/v1/tarefa/listar.php",
-                    data: JSON.stringify({idUsuario: usuarioAtual.id}),
-                    dataType: "json",
                     success: function(tarefas) {
                         console.log("Tarefas listadas", tarefas);
                     },
 
-                    error: function(a,b,c) {
-                        console.log("Erro ao listar tarefas");
+                    error: function(erro) {
+                        console.log("Erro ao listar tarefas", erro.responseText);
                     }
                 });
             }
@@ -120,8 +108,8 @@
                         console.log("Tarefa atualizada");
                     },
 
-                    error: function() {
-                        console.log("Erro ao atualizar tarefa");
+                    error: function(erro) {
+                        console.log("Erro ao atualizar tarefa", erro.responseText);
                     }
                 });
             }
@@ -136,8 +124,8 @@
                         console.log("Tarefa excluida");
                     },
 
-                    error: function() {
-                        console.log("Erro ao excluir tarefa");
+                    error: function(erro) {
+                        console.log("Erro ao excluir tarefa", erro.responseText);
                     }
                 });
             }

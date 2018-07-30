@@ -8,7 +8,7 @@
             return $conexao;
         } catch (Exception $e) {
             http_response_code(500);
-            die();
+            die("Erro interno no banco de dados.");
         }
     }
 ?>

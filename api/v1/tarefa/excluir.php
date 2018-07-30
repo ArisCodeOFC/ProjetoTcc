@@ -1,6 +1,6 @@
 <?php
     /*
-        "api/v1/tarefa/excluir.php"
+        POST "api/v1/tarefa/excluir.php"
         Exclui uma tarefa existente
 
         RECEBE: {
@@ -8,8 +8,7 @@
         }
 
         PRODUZ:
-            401 - O usuário não está logado
-            404 - Erro ao excluir no banco de dados ou id não encontrado
+            500 - Erro ao excluir no banco de dados ou id não encontrado
             204 - Tarefa excluída com sucesso
     */
 
@@ -17,13 +16,14 @@
     header("Content-Type: application/json");
     session_start();
 
-    if (!isset($_SESSION["usuario"])) {
-        http_response_code(401);
-    } else {
-        $body = json_decode(file_get_contents("php://input"));
-        $id = $body->id;
+    $body = json_decode(file_get_contents("php://input"));
+    $id = $body->id;
 
-        $result = false;
+    if (!isset($_SESSION["usuario"])) {
+        http_response_code(500);
+        die("Você não pode fazer isso, pois não está logado.");
+    } else {
+        $resultado = false;
 
         $conexao = getDatabaseConnection();
         if ($conexao) {
@@ -31,15 +31,16 @@
             if ($statement) {
                 $statement->bind_param("i", $id);
                 $statement->execute();
-                $result = $statement->affected_rows;
+                $resultado = $statement->affected_rows;
                 $statement->close();
             }
 
             $conexao->close();
         }
 
-        if ($result < 0) {
-            http_response_code(404);
+        if ($resultado < 0) {
+            http_response_code(500);
+            die("Não foi possível excluir a tarefa.");
         } else {
             http_response_code(204);
         }
