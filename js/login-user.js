@@ -1,7 +1,7 @@
 //É chamado quando a pagina terminar de carregar o html
 $(window).on("finishload", function(){
 
-    console.log("Teste1");
+    //console.log("Teste1");
     $(document).ready(function(){
         console.log("Teste2");
 
@@ -31,7 +31,8 @@ $(window).on("finishload", function(){
                     window.location.href = "index.html";
                 },
                 error:function(erro){
-                    $('#erro').texte(erro.responseText);
+                    console.log(erro);
+                    $('#erro').text(erro.responseText);
                 }
             });
 
