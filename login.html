@@ -8,9 +8,9 @@
         <script src="js/main.js"></script>
         <script src="js/login-user.js"></script>
     </head>
-    <body class="body">
+    <body>
         <header>
-            <div id="header">
+            <div class="main" style="display:flex; justify-content:center;flex-direction: column;">
                 <div class="login">
                     <form id="login-user" name="autenticacao" method="post" action="" >
                         <table>
@@ -21,7 +21,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                 <input value="" id="user" placeholder="Digite seu usuario" size="25" type="text" name="txtU" required/>
+                                 <input value="" id="user" placeholder="Digite seu usuario" size="28" type="text" name="txtU" required/>
                                 </td>
                             </tr>
                             <tr>
@@ -31,16 +31,16 @@
                             </tr>
                             <tr>
                                 <td>
-                                 <input value="" id="pass" placeholder="Digite sua senha" size="25" type="password" name="txtU" required/>
+                                 <input value="" id="pass" placeholder="Digite sua senha" size="28" type="password" name="txtU" required/>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                 <input value="Entrar" size="1" type="submit" name="btnOk"/>
+                                 <input value="Entrar" size="1" type="submit" id="bot" name="btnOk"/>
                                 </td>
                             </tr>
                             <td >
-                                <a href="cadastroUser.html">
+                                <a href="cadastroUser.html" style="  margin-left: 5px; font-weight: bold; text-decoration: none; color: #E83131;">
                                     Cadastre-se
                                 </a>
                             </td>
