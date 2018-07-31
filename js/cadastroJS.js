@@ -36,10 +36,13 @@ $(window).on("finishload", function(){
                     dataType:"json", //Tipo de dado
                     data: JSON.stringify(model_user), //Objeto que criei ali em cima
                     success:function(){
-                        window.location.href = "login.html";
+                        $('#resultado').text("Usuário cadastrado com sucesso");
+                        setTimeout(function() {
+                            window.location.href = "login.html";
+                        }, 1500);
                     }, //Se der certo
                     error:function(erro){
-                        $('#teste').text(erro.responseText);
+                        $('#resultado').text(erro.responseText);
                     } //Se der errado
                 });
 

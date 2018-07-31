@@ -12,7 +12,7 @@
     error_reporting(0);
     session_start();
     if (isset($_SESSION["usuario"])) {
-        session_destroy();
+        unset($_SESSION["usuario"]);
     } else {
         http_response_code(500);
         die("Você não pode fazer isso, pois não está logado.");
