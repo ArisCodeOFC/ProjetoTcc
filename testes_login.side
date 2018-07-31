@@ -284,6 +284,242 @@
       "target": "id=resultado",
       "value": "Este email já está cadastrado."
     }]
+  }, {
+    "id": "ec61fb33-ac7e-420e-97a2-acb09edbfe3a",
+    "name": "5. Login valido",
+    "commands": [{
+      "id": "2bd63823-6b61-4ea0-a873-8ed0cebc4503",
+      "comment": "",
+      "command": "open",
+      "target": "/inf4t/projeto/login.html",
+      "value": ""
+    }, {
+      "id": "0dfea091-3acb-4bff-a2bb-7527529a8971",
+      "comment": "",
+      "command": "clickAt",
+      "target": "css=div.main",
+      "value": "415,397"
+    }, {
+      "id": "3f5e4364-bfc6-44a0-9c5e-084fbbe518cb",
+      "comment": "",
+      "command": "clickAt",
+      "target": "id=user",
+      "value": "83,6"
+    }, {
+      "id": "5867ac23-e2e8-495c-8b1d-f19625250376",
+      "comment": "",
+      "command": "type",
+      "target": "id=user",
+      "value": "admin@gmail.com"
+    }, {
+      "id": "50992b23-1eb4-42e3-86e5-c00d993d2fed",
+      "comment": "",
+      "command": "type",
+      "target": "id=pass",
+      "value": "1234"
+    }, {
+      "id": "b1041e51-af55-4f3d-8b17-e18bf0f536c0",
+      "comment": "",
+      "command": "clickAt",
+      "target": "id=botao",
+      "value": "60,6"
+    }, {
+      "id": "98e8ba20-3379-47d5-bfe0-b6bc05e04982",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=erro",
+      "value": "Logado com sucesso!!"
+    }]
+  }, {
+    "id": "369e0918-85e8-4d67-aecd-e5f526bb6a77",
+    "name": "2. Login com email vazio",
+    "commands": [{
+      "id": "45c9b0a9-bc24-4be2-9335-d8f5fe8a9661",
+      "comment": "",
+      "command": "open",
+      "target": "/inf4t/projeto/login.html",
+      "value": ""
+    }, {
+      "id": "a253a912-1e7c-4ddd-8343-16c50abaee29",
+      "comment": "",
+      "command": "clickAt",
+      "target": "id=pass",
+      "value": "50,8"
+    }, {
+      "id": "a5691621-3dc4-4de1-bcbb-dbed3e573463",
+      "comment": "",
+      "command": "type",
+      "target": "id=pass",
+      "value": "gfydbsj"
+    }, {
+      "id": "58ba4587-a913-413c-bf8f-92c8058b59f9",
+      "comment": "",
+      "command": "clickAt",
+      "target": "id=botao",
+      "value": "40,10"
+    }, {
+      "id": "6814506a-d3ef-49e5-a274-8ff5ae2e4b27",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "css=#user:invalid",
+      "value": ""
+    }]
+  }, {
+    "id": "f0a9a7da-e374-4f61-b7b5-8abb3e835c7a",
+    "name": "3. Login com senha vazia",
+    "commands": [{
+      "id": "44e0d5a0-cb9a-416b-a5f9-59c2cd4519db",
+      "comment": "",
+      "command": "open",
+      "target": "/inf4t/projeto/login.html",
+      "value": ""
+    }, {
+      "id": "9bbc1ea5-348d-4135-9e99-9c1765ed78e3",
+      "comment": "",
+      "command": "clickAt",
+      "target": "css=div.main",
+      "value": "209,460"
+    }, {
+      "id": "9c166f30-ca3e-4de6-becd-12127ecc1aaf",
+      "comment": "",
+      "command": "clickAt",
+      "target": "id=user",
+      "value": "79,17"
+    }, {
+      "id": "8b90315f-82dd-4e0a-b0ef-dc1970c0e2e3",
+      "comment": "",
+      "command": "type",
+      "target": "id=user",
+      "value": "admin@gmail.com"
+    }, {
+      "id": "abb9a5ab-8bee-4b43-9d1f-f72aeb872f4e",
+      "comment": "",
+      "command": "clickAt",
+      "target": "id=botao",
+      "value": "34,10"
+    }, {
+      "id": "30dd1c1e-5f09-4a81-a519-175ca877d00f",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "css=#pass:invalid",
+      "value": ""
+    }]
+  }, {
+    "id": "823dc2cf-8bcc-4c33-ab28-a629681cc427",
+    "name": "4. Login com email invalido",
+    "commands": [{
+      "id": "5b0b065c-d36a-4a4a-873d-d30fb37d9949",
+      "comment": "",
+      "command": "open",
+      "target": "/inf4t/projeto/login.html",
+      "value": ""
+    }, {
+      "id": "c92849c8-b223-43ad-af4f-ee3a7326fcc3",
+      "comment": "",
+      "command": "clickAt",
+      "target": "css=div.main",
+      "value": "288,360"
+    }, {
+      "id": "bc10568a-c58f-4ede-a62b-80fd3023a8be",
+      "comment": "",
+      "command": "clickAt",
+      "target": "css=table",
+      "value": "46,48"
+    }, {
+      "id": "a849a8b5-d733-46db-a29f-6c595b7c27cd",
+      "comment": "",
+      "command": "clickAt",
+      "target": "id=user",
+      "value": "43,17"
+    }, {
+      "id": "27e7c696-146f-4448-9f6b-c584a1a8d713",
+      "comment": "",
+      "command": "type",
+      "target": "id=user",
+      "value": "thtrhe"
+    }, {
+      "id": "db7d10ee-c2aa-4cf5-9454-7260ae2796f4",
+      "comment": "",
+      "command": "clickAt",
+      "target": "id=pass",
+      "value": "106,16"
+    }, {
+      "id": "c4e0c196-49c2-4dfb-af7d-0bc2e8d68065",
+      "comment": "",
+      "command": "type",
+      "target": "id=pass",
+      "value": "dsfads"
+    }, {
+      "id": "76499383-b85b-41ce-a020-e1535bf5e433",
+      "comment": "",
+      "command": "clickAt",
+      "target": "id=botao",
+      "value": "65,2"
+    }, {
+      "id": "92d9baa0-48e2-4794-996d-11f18e711f37",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "css=#user:invalid",
+      "value": ""
+    }]
+  }, {
+    "id": "3bc51461-d681-465c-9949-1b2aedcccb48",
+    "name": "1. Login invalido",
+    "commands": [{
+      "id": "1a5ae597-bd9e-49fc-9e1b-4c1400c523da",
+      "comment": "",
+      "command": "open",
+      "target": "/inf4t/projeto/login.html",
+      "value": ""
+    }, {
+      "id": "34ca6658-38b3-4dde-b531-ffdd3ce85e33",
+      "comment": "",
+      "command": "clickAt",
+      "target": "css=div.main",
+      "value": "315,355"
+    }, {
+      "id": "eaa4c6b1-99cc-40b1-a3a9-579fb8ef0850",
+      "comment": "",
+      "command": "clickAt",
+      "target": "id=user",
+      "value": "168,16"
+    }, {
+      "id": "b1d7e0d7-3896-49e1-9e62-19ec7595c6b8",
+      "comment": "",
+      "command": "clickAt",
+      "target": "id=user",
+      "value": "51,10"
+    }, {
+      "id": "6ad2f664-5dc9-405d-b6fd-a4443a4cc61b",
+      "comment": "",
+      "command": "type",
+      "target": "id=user",
+      "value": "sadgv@ds.com"
+    }, {
+      "id": "81b14ecf-7329-4763-994e-2919ef477558",
+      "comment": "",
+      "command": "clickAt",
+      "target": "id=pass",
+      "value": "50,10"
+    }, {
+      "id": "70191da4-b8ad-43d6-84d4-f2dca5c61558",
+      "comment": "",
+      "command": "type",
+      "target": "id=pass",
+      "value": "dsgd"
+    }, {
+      "id": "f880d3eb-6f63-46dd-9b58-c9cc16d23627",
+      "comment": "",
+      "command": "clickAt",
+      "target": "id=botao",
+      "value": "65,9"
+    }, {
+      "id": "9a037d72-aeed-4a96-9353-6c0da6bca88d",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=erro",
+      "value": "Usuário ou senha incorretos."
+    }]
   }],
   "suites": [{
     "id": "44cbbc5c-73ad-4a10-b0eb-7bd79ab6468f",
@@ -291,6 +527,12 @@
     "parallel": false,
     "timeout": 300,
     "tests": ["8f683e76-6cd0-4eec-868e-6fb6ec71803d", "bd25f430-0811-4283-9ffa-a39633b76a80", "9d9bbf92-cdc0-4b75-9c30-5a012c570f40", "6650ff1a-26c8-48cc-aca8-adf2f11b5c9a", "7aea37ef-1ca3-4c4d-bd99-c0ca313f6a59", "42d39590-153b-49a5-bc0c-108887743808"]
+  }, {
+    "id": "4b6935b8-225e-43eb-be1b-e9a68c0cd5a8",
+    "name": "Testes de login",
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["ec61fb33-ac7e-420e-97a2-acb09edbfe3a", "369e0918-85e8-4d67-aecd-e5f526bb6a77", "f0a9a7da-e374-4f61-b7b5-8abb3e835c7a", "823dc2cf-8bcc-4c33-ab28-a629681cc427", "3bc51461-d681-465c-9949-1b2aedcccb48"]
   }],
   "urls": ["http://localhost/"],
   "plugins": [],
