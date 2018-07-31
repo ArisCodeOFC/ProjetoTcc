@@ -28,7 +28,12 @@ $(window).on("finishload", function(){
                 dataType:"json",
                 data:JSON.stringify(login_user),
                 success:function(){
-                    window.location.href = "index.html";
+                    $('#erro').text("Logado com sucesso!!");
+                    setTimeout(function(){
+                       window.location.href = "index.html";
+
+                    },1500)
+
                 },
                 error:function(erro){
                     console.log(erro);
