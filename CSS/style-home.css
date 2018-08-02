@@ -135,3 +135,21 @@
     transition: max-height 0.2s ease-out;
     background-color: #DDD;
 }
+.toast{
+    width: 200px;
+    background-color: #E83131;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.toast h2{
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    padding: 16px;
+}
