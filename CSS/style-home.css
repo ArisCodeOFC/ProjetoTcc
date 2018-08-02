@@ -60,8 +60,20 @@
 .btnenviar{
     height: 40px;
     width: 80px;
-    display: block;
+    display: inline-block;
     margin-left: 30px;
+    margin-top: 15px;
+    border-radius: 10px;
+    color: #FFF;
+    outline: none;
+    border: none;
+    background-color: #E83131;
+}
+.btncancelar{
+    height: 40px;
+    width: 80px;
+    display: inline-block;
+    margin-left: 5px;
     margin-top: 15px;
     border-radius: 10px;
     color: #FFF;
