@@ -1,5 +1,19 @@
 $(window).on("finishload", function() {
+
+    $("#logout").click(function(){
+       $.ajax({
+           type: "POST",
+           url: "api/v1/usuario/logout.php",
+           success: function(sair){
+               window.location.href="index.html"
+           }
+       });
+    });
+
     $(document).ready(function() {
+
+        $("#nome_usuario").text(usuarioAtual.nome)
+
         $.ajax({
             type: "POST",
             url: "api/v1/tarefa/listar.php",
