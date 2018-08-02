@@ -6,28 +6,7 @@
         <link rel="stylesheet" href="CSS/style-home.css">
         <script src="js/jquery-3.2.1.min.js"></script>
         <script src="js/main.js"></script>
-        <script>
-            var frm = $("#form-tarefa");
-            frm.submit(function(e) {
-                e.preventDefault();
-                var form = $(this);
-                var url = form.attr('action');
-
-                $.ajax({
-                    type: frm.attr('method'),
-                    url: 'api/v1/tarefa/inserir.php',
-                    data: frm.serialize(),
-                    success: function (data) {
-                        console.log('SUCESSO');
-                        console.log(data);
-                    },
-                    error: function (data) {
-                        console.log('ERRO');
-                        console.log(data);
-                    },
-                });
-            });
-        </script>
+        <script src="js/tarefa.js"></script>
     </head>
     <body>
         <section class="main">
@@ -48,25 +27,13 @@
                         <label for="txtdescricao">Descrição</label>
                         <textarea id="txtdescricao" name="txtdescricao" required></textarea>
                         <!-- -->
-                        <button type="submit" onclick="submit()" class="btnenviar">Enviar</button>
+                        <button type="submit" class="btnenviar">Enviar</button>
                         <br>
                     </form>
                 </article>
             </header>
 
             <section id="home_block">
-                <div class="tarefa_block">
-                    <h2>Teste</h2>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                    <div>
-                        <figure>
-                            <img src="edit.svg">
-                        </figure>
-                        <figure>
-                            <img src="delete.svg">
-                        </figure>
-                    </div>
-                </div>
             </section>
         </section>
 

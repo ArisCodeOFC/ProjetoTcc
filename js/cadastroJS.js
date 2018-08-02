@@ -38,7 +38,7 @@ $(window).on("finishload", function(){
                     success:function(){
                         $('#resultado').text("Usuário cadastrado com sucesso");
                         setTimeout(function() {
-                            window.location.href = "login.html";
+                            window.location.href = "index.html";
                         }, 1500);
                     }, //Se der certo
                     error:function(erro){

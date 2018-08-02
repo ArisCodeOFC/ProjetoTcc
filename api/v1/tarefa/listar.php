@@ -29,7 +29,7 @@
 
         $conexao = getDatabaseConnection();
         if ($conexao) {
-            $statement = $conexao->prepare("SELECT id, titulo, descricao FROM tbl_tarefa WHERE idUsuario = ?");
+            $statement = $conexao->prepare("SELECT id, titulo, descricao FROM tbl_tarefa WHERE idUsuario = ? ORDER BY id DESC");
             if ($statement) {
                 $statement->bind_param("i", $idUsuario);
                 $statement->execute();

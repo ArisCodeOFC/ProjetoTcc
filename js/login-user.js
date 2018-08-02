@@ -30,7 +30,7 @@ $(window).on("finishload", function(){
                 success:function(){
                     $('#erro').text("Logado com sucesso!!");
                     setTimeout(function(){
-                       window.location.href = "index.html";
+                       window.location.href = "home.html";
 
                     },1500)
 
