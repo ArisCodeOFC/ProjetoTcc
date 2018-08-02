@@ -24,20 +24,20 @@
     $arquivo = $body->arquivo;
 
     if (isset($arquivo) && isset($_SESSION["usuario"])) {
-        if ($arquivo == "login.html" || $arquivo == "cadastroUser.html") {
+        if ($arquivo == "index.html" || $arquivo == "cadastroUser.html") {
             http_response_code(500);
-            die("index.html");
+            die("home.html");
         } else {
             header("Content-Type: application/json");
             echo(json_encode($_SESSION["usuario"]));
         }
 
     } else {
-        if ($arquivo == "login.html" || $arquivo == "cadastroUser.html") {
+        if ($arquivo == "index.html" || $arquivo == "cadastroUser.html") {
             http_response_code(204);
         } else {
             http_response_code(500);
-            die("login.html");
+            die("index.html");
         }
     }
 ?>

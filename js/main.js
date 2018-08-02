@@ -4,6 +4,9 @@ var usuarioAtual = undefined;
 $(window).on("load", function() {
     // Qual arquivo .html o usuário está tentando acessar ?
     var arquivoAtual = window.location.pathname.split("/").pop();
+    if (arquivoAtual === "") {
+        arquivoAtual = "index.html";
+    }
 
     // Faz uma requisição ajax que autoriza ou não o acesso a página
     $.ajax({
