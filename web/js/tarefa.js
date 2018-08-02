@@ -1,18 +1,16 @@
 $(window).on("finishload", function() {
-
-    $("#logout").click(function(){
-       $.ajax({
-           type: "POST",
-           url: "api/v1/usuario/logout.php",
-           success: function(sair){
-               window.location.href="index.html"
-           }
-       });
-    });
-
     $(document).ready(function() {
+        $("#nome_usuario").text(usuarioAtual.nome);
 
-        $("#nome_usuario").text(usuarioAtual.nome)
+        $("#logout").click(function(){
+           $.ajax({
+               type: "POST",
+               url: "api/v1/usuario/logout.php",
+               success: function(sair){
+                   window.location.href="index.html";
+               }
+           });
+        });
 
         $.ajax({
             type: "POST",
@@ -64,11 +62,16 @@ $(window).on("finishload", function() {
         });
 
         $(".add_button").click(function(event) {
+            if ($(".tarefa_block.content").css("max-height") == "0px") {
+                $(".tarefa_block.content").css("max-height", "350px");
+            } else {
+                $(".tarefa_block.content").css("max-height", "0px");
+            }
+
             $("#form-tarefa").removeData("tarefa");
             $("#form-tarefa")[0].reset();
             $(".btncancelar").hide();
             $(".btnenviar").text("Enviar");
-            $(".tarefa_block.content").css("max-height", "350px");
         });
     });
 });
@@ -101,10 +104,14 @@ function adicionarTarefa() {
             $(".tarefa_block.content").css("max-height", "0");
             listarTarefa(tarefa).prependTo("#home_block");
             form[0].reset();
+            $(".toast h2").text("Tarefa adicionada com sucesso");
+            mostrarToast();
         },
         error: function (data) {
             console.log('ERRO');
             console.log(data);
+            $(".toast h2").text("Erro ao adicionar tarefa");
+            mostrarToast();
         },
     });
 }
@@ -122,10 +129,14 @@ function editarTarefa(idTarefa) {
             $(".tarefa_block[data-id='" + tarefa.id + "']").replaceWith(listarTarefa(tarefa));
             $(".tarefa_block.content").css("max-height", "0");
             form[0].reset();
+            $(".toast h2").text("Tarefa atualizada com sucesso");
+            mostrarToast();
         },
 
         error: function(erro) {
             console.log("Erro ao atualizar tarefa", erro.responseText);
+            $(".toast h2").text("Erro ao atualizar tarefa");
+            mostrarToast();
         }
     });
 }
@@ -138,10 +149,26 @@ function excluirTarefa(idTarefa) {
         dataType: "json",
         success: function() {
             $(".tarefa_block[data-id='" + idTarefa + "']").remove();
+            $(".toast h2").text("Tarefa excluida com sucesso");
+            mostrarToast();
         },
 
         error: function(erro) {
             console.log("Erro ao excluir tarefa", erro.responseText);
+            $(".toast h2").text("Erro ao excluir tarefa");
+            mostrarToast();
         }
     });
+}
+
+var timer;
+function mostrarToast() {
+    $(".toast").show();
+    if (timer) {
+        clearTimeout(timer);
+    }
+
+    timer = setTimeout(function() {
+        $(".toast").hide();
+    }, 5000);
 }

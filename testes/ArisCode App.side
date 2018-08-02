@@ -1,6 +1,6 @@
 {
   "id": "62439f75-f178-4da3-9adc-bbea309d81e6",
-  "name": "Untitled Project",
+  "name": "ArisCode App",
   "url": "http://localhost",
   "tests": [{
     "id": "8f683e76-6cd0-4eec-868e-6fb6ec71803d",
@@ -9,7 +9,7 @@
       "id": "1e36b61c-5158-45d0-b155-c3c19cfb1429",
       "comment": "",
       "command": "open",
-      "target": "/inf4t/projeto/cadastroUser.html",
+      "target": "/ArisCode/web/cadastroUser.html",
       "value": ""
     }, {
       "id": "31408526-25c4-49ad-a118-de5a551f54af",
@@ -55,7 +55,7 @@
       "id": "645b2b47-2cda-4f4c-b4ac-6a4f627dbaac",
       "comment": "",
       "command": "open",
-      "target": "/inf4t/projeto/cadastroUser.html",
+      "target": "/ArisCode/web/cadastroUser.html",
       "value": ""
     }, {
       "id": "621fb6a0-a972-40c6-8a5e-c047a28ccfc5",
@@ -101,7 +101,7 @@
       "id": "56273923-b552-4af0-ba6d-a90ecdcc038e",
       "comment": "",
       "command": "open",
-      "target": "/inf4t/projeto/cadastroUser.html",
+      "target": "/ArisCode/web/cadastroUser.html",
       "value": ""
     }, {
       "id": "9b31638d-1875-4e4f-a462-618c51b5b179",
@@ -147,7 +147,7 @@
       "id": "77928d24-e564-452f-a65c-442b7f2ec551",
       "comment": "",
       "command": "open",
-      "target": "/inf4t/projeto/cadastroUser.html",
+      "target": "/ArisCode/web/cadastroUser.html",
       "value": ""
     }, {
       "id": "4505a411-9d16-462d-b6c1-b139482a0e6d",
@@ -199,7 +199,7 @@
       "id": "f8c21570-9899-474c-93d9-680d76c2ac0e",
       "comment": "",
       "command": "open",
-      "target": "/inf4t/projeto/cadastroUser.html",
+      "target": "/ArisCode/web/cadastroUser.html",
       "value": ""
     }, {
       "id": "7b0f7218-6cec-4557-b408-359d00f32572",
@@ -245,7 +245,7 @@
       "id": "0325dafe-44ba-4baf-ac16-20aa6c640230",
       "comment": "",
       "command": "open",
-      "target": "/inf4t/projeto/cadastroUser.html",
+      "target": "/ArisCode/web/cadastroUser.html",
       "value": ""
     }, {
       "id": "e3a33ada-58b6-4650-8dba-355e3169dcb9",
@@ -291,7 +291,7 @@
       "id": "2bd63823-6b61-4ea0-a873-8ed0cebc4503",
       "comment": "",
       "command": "open",
-      "target": "/inf4t/projeto/login.html",
+      "target": "/ArisCode/web/index.html",
       "value": ""
     }, {
       "id": "0dfea091-3acb-4bff-a2bb-7527529a8971",
@@ -337,7 +337,7 @@
       "id": "45c9b0a9-bc24-4be2-9335-d8f5fe8a9661",
       "comment": "",
       "command": "open",
-      "target": "/inf4t/projeto/login.html",
+      "target": "/ArisCode/web/index.html",
       "value": ""
     }, {
       "id": "a253a912-1e7c-4ddd-8343-16c50abaee29",
@@ -371,7 +371,7 @@
       "id": "44e0d5a0-cb9a-416b-a5f9-59c2cd4519db",
       "comment": "",
       "command": "open",
-      "target": "/inf4t/projeto/login.html",
+      "target": "/ArisCode/web/index.html",
       "value": ""
     }, {
       "id": "9bbc1ea5-348d-4135-9e99-9c1765ed78e3",
@@ -411,7 +411,7 @@
       "id": "5b0b065c-d36a-4a4a-873d-d30fb37d9949",
       "comment": "",
       "command": "open",
-      "target": "/inf4t/projeto/login.html",
+      "target": "/ArisCode/web/index.html",
       "value": ""
     }, {
       "id": "c92849c8-b223-43ad-af4f-ee3a7326fcc3",
@@ -469,7 +469,7 @@
       "id": "1a5ae597-bd9e-49fc-9e1b-4c1400c523da",
       "comment": "",
       "command": "open",
-      "target": "/inf4t/projeto/login.html",
+      "target": "/ArisCode/web/index.html",
       "value": ""
     }, {
       "id": "34ca6658-38b3-4dde-b531-ffdd3ce85e33",
@@ -520,6 +520,320 @@
       "target": "id=erro",
       "value": "Usuário ou senha incorretos."
     }]
+  }, {
+    "id": "c8f93d36-0569-482d-a7b1-36eb5e947dcc",
+    "name": "1. Adicionar tarefa com sucesso",
+    "commands": [{
+      "id": "b1f4bede-a3c8-4536-aa92-e363c568f73e",
+      "comment": "",
+      "command": "open",
+      "target": "/ArisCode/web/home.html",
+      "value": ""
+    }, {
+      "id": "fe4a8c1a-30a3-4b6c-bdde-5f35a254fcd7",
+      "comment": "",
+      "command": "clickAt",
+      "target": "css=img",
+      "value": "22,37"
+    }, {
+      "id": "07faf7fe-044e-494d-9dc6-5a0f7c915700",
+      "comment": "",
+      "command": "clickAt",
+      "target": "id=txttitulo",
+      "value": "48,7"
+    }, {
+      "id": "cb81749a-ade5-4135-91d9-516d85928834",
+      "comment": "",
+      "command": "type",
+      "target": "id=txttitulo",
+      "value": "xpto"
+    }, {
+      "id": "24edd78b-a85b-45d7-a1df-c35b0cf28f35",
+      "comment": "",
+      "command": "type",
+      "target": "id=txtdescricao",
+      "value": "xpto1234"
+    }, {
+      "id": "33f3dd2a-57ef-402c-b16a-8862efe17614",
+      "comment": "",
+      "command": "clickAt",
+      "target": "css=button.btnenviar",
+      "value": "54,18"
+    }, {
+      "id": "cb474693-69a5-4c25-b3ea-8280f5654d74",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.toast h2",
+      "value": "Tarefa adicionada com sucesso"
+    }]
+  }, {
+    "id": "fad70fef-14ea-4b38-a544-fd78da901c82",
+    "name": "2. Adicionar tarefa com nome vazio",
+    "commands": [{
+      "id": "bb03ce27-1a73-4613-8ee9-88080008133f",
+      "comment": "",
+      "command": "open",
+      "target": "/ArisCode/web/home.html",
+      "value": ""
+    }, {
+      "id": "d22c22b0-7c47-424b-8a0a-61b8c2ce604e",
+      "comment": "",
+      "command": "clickAt",
+      "target": "id=navbar",
+      "value": "539,98"
+    }, {
+      "id": "d3743922-9e93-4017-a8b3-4488e5d49726",
+      "comment": "",
+      "command": "clickAt",
+      "target": "css=img",
+      "value": "35,29"
+    }, {
+      "id": "43895af7-1115-4762-809d-8429a439e024",
+      "comment": "",
+      "command": "clickAt",
+      "target": "id=txtdescricao",
+      "value": "133,39"
+    }, {
+      "id": "6dd5e0f9-d977-4112-a5d6-32653d3ca0b8",
+      "comment": "",
+      "command": "type",
+      "target": "id=txtdescricao",
+      "value": "axawdawd"
+    }, {
+      "id": "a97a6bf6-d6d2-4158-9f5b-deaa9efa0673",
+      "comment": "",
+      "command": "clickAt",
+      "target": "css=button.btnenviar",
+      "value": "40,3"
+    }, {
+      "id": "277ee139-6d8a-4653-ac1f-e9992baa6eda",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "css=#txttitulo:invalid",
+      "value": ""
+    }]
+  }, {
+    "id": "084bc8a0-7d4f-41e8-92cd-63bd66ea3372",
+    "name": "3. Adicionar tarefa com descrição vazia",
+    "commands": [{
+      "id": "15b3d5b5-2ea0-4b3d-bbff-f045b9fe6fa2",
+      "comment": "",
+      "command": "open",
+      "target": "/ArisCode/web/home.html",
+      "value": ""
+    }, {
+      "id": "5f327de0-8bbb-4d13-90b8-c1bcf82353ec",
+      "comment": "",
+      "command": "clickAt",
+      "target": "css=img",
+      "value": "53,39"
+    }, {
+      "id": "74062c65-b085-4850-b525-6d9f4aad9bdc",
+      "comment": "",
+      "command": "clickAt",
+      "target": "id=txttitulo",
+      "value": "58,13"
+    }, {
+      "id": "a5db1abc-7120-44df-b379-02ff5409279c",
+      "comment": "",
+      "command": "type",
+      "target": "id=txttitulo",
+      "value": "dwadawd"
+    }, {
+      "id": "51b6dc13-5a64-4d76-89c2-f9f7aee49c78",
+      "comment": "",
+      "command": "clickAt",
+      "target": "css=button.btnenviar",
+      "value": "58,19"
+    }, {
+      "id": "48c355a1-11a0-4a69-93a6-5ed5c1f16cf5",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "css=#txtdescricao:invalid",
+      "value": ""
+    }]
+  }, {
+    "id": "738edc69-0e8c-4f05-b357-a7922c85762e",
+    "name": "1. Editar tarefa com sucesso",
+    "commands": [{
+      "id": "f657b1c2-b38a-4ab5-81de-04584bfed6c1",
+      "comment": "",
+      "command": "open",
+      "target": "/ArisCode/web/home.html",
+      "value": ""
+    }, {
+      "id": "a8ce395a-b9bb-4137-8e72-148ddd0480a1",
+      "comment": "",
+      "command": "clickAt",
+      "target": "css=figure.editar > img",
+      "value": "19,18"
+    }, {
+      "id": "238a9064-e0f1-4cbc-8e5d-f56b42a335fd",
+      "comment": "",
+      "command": "clickAt",
+      "target": "id=txttitulo",
+      "value": "94,25"
+    }, {
+      "id": "2e8d9adb-0b29-4668-9599-5c6c89f1aa1d",
+      "comment": "",
+      "command": "type",
+      "target": "id=txttitulo",
+      "value": "qwdaawdaw"
+    }, {
+      "id": "2160ab42-31d4-42b2-9f7d-8ecdf75c7af9",
+      "comment": "",
+      "command": "clickAt",
+      "target": "id=txtdescricao",
+      "value": "83,47"
+    }, {
+      "id": "e033271d-4aeb-4ad3-99b4-2d346ff2ab31",
+      "comment": "",
+      "command": "type",
+      "target": "id=txtdescricao",
+      "value": "wdawadwda"
+    }, {
+      "id": "8ba631d0-6e45-4571-97bc-95273351b778",
+      "comment": "",
+      "command": "clickAt",
+      "target": "css=button.btnenviar",
+      "value": "32,18"
+    }, {
+      "id": "37ffc67a-0598-4c91-964a-0fefd98ac8d6",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.toast h2",
+      "value": "Tarefa atualizada com sucesso"
+    }]
+  }, {
+    "id": "8d700036-db6e-407c-9678-8ffdf2d7c989",
+    "name": "2. Editar tarefa para remover título",
+    "commands": [{
+      "id": "be55623b-99d9-459c-aee1-63c0e5cc1d73",
+      "comment": "",
+      "command": "open",
+      "target": "/ArisCode/web/home.html",
+      "value": ""
+    }, {
+      "id": "9e794eec-9a03-4a92-af79-7207b385f854",
+      "comment": "",
+      "command": "clickAt",
+      "target": "css=figure.editar > img",
+      "value": "4,19"
+    }, {
+      "id": "5bdebc78-9ca8-4197-924b-277e8d018de8",
+      "comment": "",
+      "command": "type",
+      "target": "id=txttitulo",
+      "value": ""
+    }, {
+      "id": "c601953a-2057-443a-9085-37f722754e68",
+      "comment": "",
+      "command": "clickAt",
+      "target": "css=button.btnenviar",
+      "value": "54,11"
+    }, {
+      "id": "29c8945f-3fe6-40c3-aaf8-0d97c49487be",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "css=#txttitulo:invalid",
+      "value": ""
+    }]
+  }, {
+    "id": "999cda2b-8ac0-4dde-b270-42d37118b110",
+    "name": "3. Editar tarefa para remover descrição",
+    "commands": [{
+      "id": "87dd4d03-6b6e-4e68-900f-dc46c309daa8",
+      "comment": "",
+      "command": "open",
+      "target": "/ArisCode/web/home.html",
+      "value": ""
+    }, {
+      "id": "7b7eb4db-8bac-4595-81f0-9661af185a4d",
+      "comment": "",
+      "command": "clickAt",
+      "target": "css=figure.editar > img",
+      "value": "14,12"
+    }, {
+      "id": "72903831-07ee-4009-af9d-037ff9f91f74",
+      "comment": "",
+      "command": "clickAt",
+      "target": "id=txtdescricao",
+      "value": "74,118"
+    }, {
+      "id": "ee93d43f-d3c7-49fd-a864-a42129d2ea1c",
+      "comment": "",
+      "command": "type",
+      "target": "id=txtdescricao",
+      "value": ""
+    }, {
+      "id": "981cde24-69b6-4aa1-b9c2-38f418f7a81d",
+      "comment": "",
+      "command": "clickAt",
+      "target": "css=button.btnenviar",
+      "value": "46,23"
+    }, {
+      "id": "4429cf80-ce61-4ecf-9f32-202c69164690",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "css=#txtdescricao:invalid",
+      "value": ""
+    }]
+  }, {
+    "id": "8ab249f3-b089-4093-a7fa-058e23227e22",
+    "name": "1. Excluir tarefa",
+    "commands": [{
+      "id": "e3330bca-8118-4c9f-8951-dbb1841171e6",
+      "comment": "",
+      "command": "open",
+      "target": "/ArisCode/web/home.html",
+      "value": ""
+    }, {
+      "id": "6eae5a04-4aa5-48dc-b0d9-efafd93408f9",
+      "comment": "",
+      "command": "clickAt",
+      "target": "css=div.tarefa_block",
+      "value": "178,156"
+    }, {
+      "id": "07501f84-b288-4845-973b-e2a27bdd565b",
+      "comment": "",
+      "command": "clickAt",
+      "target": "css=figure.excluir > img",
+      "value": "21,14"
+    }, {
+      "id": "68fc9681-9c5c-4f17-adb7-91b1cb8afc93",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.toast h2",
+      "value": "Tarefa excluida com sucesso"
+    }]
+  }, {
+    "id": "59650b8e-fd5c-4709-8082-e543ed5dbbcd",
+    "name": "1. Logout",
+    "commands": [{
+      "id": "3a2fa2bf-9bfb-4533-89d0-3298c9ff13b2",
+      "comment": "",
+      "command": "open",
+      "target": "/ArisCode/web/home.html",
+      "value": ""
+    }, {
+      "id": "6b61cc1a-a6d2-40d2-aee3-be331a29db7f",
+      "comment": "",
+      "command": "clickAt",
+      "target": "id=nome_usuario",
+      "value": "137,18"
+    }, {
+      "id": "355dae42-2d7f-49a0-8677-c87ba9b00fe1",
+      "comment": "",
+      "command": "clickAt",
+      "target": "id=logout",
+      "value": "53,5"
+    }, {
+      "id": "9842a6ad-4d52-4945-aa86-b139416c320d",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "css=.login",
+      "value": ""
+    }]
   }],
   "suites": [{
     "id": "44cbbc5c-73ad-4a10-b0eb-7bd79ab6468f",
@@ -533,6 +847,30 @@
     "parallel": false,
     "timeout": 300,
     "tests": ["ec61fb33-ac7e-420e-97a2-acb09edbfe3a", "369e0918-85e8-4d67-aecd-e5f526bb6a77", "f0a9a7da-e374-4f61-b7b5-8abb3e835c7a", "823dc2cf-8bcc-4c33-ab28-a629681cc427", "3bc51461-d681-465c-9949-1b2aedcccb48"]
+  }, {
+    "id": "8fd83ac7-ab4d-446e-8356-b060f8d17bc8",
+    "name": "Teste de adicionar tarefa",
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["c8f93d36-0569-482d-a7b1-36eb5e947dcc", "fad70fef-14ea-4b38-a544-fd78da901c82", "084bc8a0-7d4f-41e8-92cd-63bd66ea3372"]
+  }, {
+    "id": "b99fea6f-db01-435d-93ca-d9081c41e131",
+    "name": "Teste de editar tarefa",
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["738edc69-0e8c-4f05-b357-a7922c85762e", "8d700036-db6e-407c-9678-8ffdf2d7c989", "999cda2b-8ac0-4dde-b270-42d37118b110"]
+  }, {
+    "id": "bace3531-d1a5-4a95-baed-14b26d4ebb45",
+    "name": "Teste de excluir tarefa",
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["8ab249f3-b089-4093-a7fa-058e23227e22"]
+  }, {
+    "id": "c4a0854d-a71d-4e27-a2c7-3ba7ee9190a1",
+    "name": "Teste de logout",
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["59650b8e-fd5c-4709-8082-e543ed5dbbcd"]
   }],
   "urls": ["http://localhost/"],
   "plugins": [],
