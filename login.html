@@ -2,21 +2,18 @@
     <head>
         <title>Teste Mudança</title>
         <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="CSS//style1.css">
+        <link rel="stylesheet" type="text/css" href="CSS/style1.css">
         <link rel="stylesheet" href="CSS/style.css">
         <script src="js/jquery-3.2.1.min.js"></script>
         <script src="js/main.js"></script>
+        <script src="js/login-user.js"></script>
     </head>
-    <body class="body">
+    <body>
         <header>
-            <div id="header">
+            <div class="main" style="display:flex; justify-content:center;flex-direction: column;">
                 <div class="login">
-                     <table>
-<<<<<<< HEAD
-                        <tr>
-                            <td>
-                                <p> Usuário:</p>
-=======
+                    <form id="login-user" name="autenticacao" method="post" action="" >
+                        <table>
                             <tr>
                                 <td>
                                     <p> Usuário:</p>
@@ -24,7 +21,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                 <input value="" placeholder="Digite seu usuario" size="25" type="text" name="txtU" required/>
+                                 <input value="" id="user" placeholder="Digite seu usuario" size="28" type="email" name="txtU" required/>
                                 </td>
                             </tr>
                             <tr>
@@ -34,47 +31,24 @@
                             </tr>
                             <tr>
                                 <td>
-                                 <input value="" placeholder="Digite sua senha" size="25" type="password" name="txtU" required/>
+                                 <input value="" id="pass" placeholder="Digite sua senha" size="28" type="password" name="txtU" required/>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                 <input value="Entrar" size="1" type="button" name="btnOk"/>
+                                 <input value="Entrar" size="1" type="submit" id="botao" name="btnOk" />
                                 </td>
                             </tr>
                             <td >
-                                <a href="cadastroUser.html">
-                            Cadastre-se
+                                <a href="cadastroUser.html" style="  margin-left: 5px; font-weight: bold; text-decoration: none; color: #E83131;">
+                                    Cadastre-se
                                 </a>
->>>>>>> origin/master
                             </td>
-                        </tr>
-                        <tr>
-                            <td>
-                             <input value="" placeholder="Digite seu usuario" size="25" type="text" name="txtU"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p>Senha:</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                             <input value="" placeholder="Digite sua senha" size="25" type="password" name="txtU"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                             <input value="Entrar" size="1" type="button" name="btnOk"/>
-                            </td>
-                        </tr>
-                        <td >
-                            <a href="cadastroUser.html">
-                        Cadastre-se
-                            </a>
-                        </td>
-                    </table>
+                        </table>
+                    </form>
+                    <div>
+                        <p id="erro"></p>
+                    </div>
                 </div>
             </div>
         </header>
